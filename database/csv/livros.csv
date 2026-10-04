@@ -1,0 +1,6 @@
+id,titulo,isbn,ano_publicacao,quantidade_total,quantidade_disponivel,autor_id
+1,Capitães da Areia,9788535914061,1937,1,0,1
+2,Dom Casmurro,9788594318602,1899,3,2,2
+3,A Hora da Estrela,9788532508126,1977,2,2,4
+4,Grande Sertão: Veredas,9788501114775,1956,4,4,3
+5,Memórias Póstumas de Brás Cubas,9788594318619,1881,2,2,2

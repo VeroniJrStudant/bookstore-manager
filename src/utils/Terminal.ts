@@ -3,6 +3,10 @@ import { stdin as input, stdout as output } from "node:process";
 
 export type Validador = (valor: string) => string | null;
 
+export function opcional(validar: Validador): Validador {
+  return (valor) => (valor === "" ? null : validar(valor));
+}
+
 export class Terminal {
   private readonly leitor = readline.createInterface({ input, output });
 

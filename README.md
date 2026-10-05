@@ -333,3 +333,7 @@ Os commits seguem o padrão [Conventional Commits](https://www.conventionalcommi
 ## Kanban
 
 Planejamento e acompanhamento das tarefas no Asana: [BookStore Manager CLI](https://app.asana.com/1/1217848314402019/project/1219088784899802/list)
+
+> O quadro do Asana exige login. Abaixo, o estado final do Kanban:
+
+![Kanban do projeto no Asana](assets/kanban.png)

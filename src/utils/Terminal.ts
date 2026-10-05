@@ -10,6 +10,13 @@ export function opcional(validar: Validador): Validador {
 export class Terminal {
   private readonly leitor = readline.createInterface({ input, output });
 
+  constructor() {
+    this.leitor.on("SIGINT", () => {
+      console.log("\n\nPrograma encerrado pelo usuário.");
+      process.exit(0);
+    });
+  }
+
   async perguntar(pergunta: string): Promise<string> {
     const resposta = await this.leitor.question(pergunta);
     return resposta.trim();

@@ -1,12 +1,8 @@
 import { Autor } from "../models/Autor";
 import { AutorService } from "../services/AutorService";
-import { Terminal, Validador } from "../utils/Terminal";
+import { Terminal, opcional } from "../utils/Terminal";
 import { formatarData } from "../utils/formatacao";
 import { validarDataNascimento, validarTextoObrigatorio } from "../utils/validacao";
-
-function opcional(validar: Validador): Validador {
-  return (valor) => (valor === "" ? null : validar(valor));
-}
 
 function paraTabela(autor: Autor) {
   return {

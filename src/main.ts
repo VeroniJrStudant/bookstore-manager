@@ -20,7 +20,4 @@ async function main(): Promise<void> {
   }
 }
 
-const nomeSistema: string = "BookStore Manager CLI";
-console.log(`${nomeSistema} - ambiente pronto`);
-
 main();

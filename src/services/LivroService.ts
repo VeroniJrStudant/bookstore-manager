@@ -10,6 +10,7 @@ import {
   validarQuantidade,
   validarTextoObrigatorio,
 } from "../utils/validacao";
+import { PoolClient } from "pg";
 
 export class LivroService {
   constructor(
@@ -58,6 +59,18 @@ export class LivroService {
       throw new ErroDeNegocio("Não é possível remover: o livro possui empréstimos registrados.");
     }
     await this.repositorio.remover(id);
+  }
+
+
+  async retirarExemplar(id: number, conexao: PoolClient): Promise<void> {
+    const retirado = await this.repositorio.retirarExemplar(id, conexao);
+    if (!retirado) {
+      throw new ErroDeNegocio("Não há exemplares disponíveis deste livro.");
+    }
+  }
+  
+  devolverExemplar(id: number, conexao: PoolClient): Promise<void> {
+    return this.repositorio.devolverExemplar(id, conexao);
   }
 
   private validar(dados: DadosLivro): DadosLivro {

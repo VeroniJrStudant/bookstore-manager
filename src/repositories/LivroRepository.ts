@@ -1,3 +1,4 @@
+import { PoolClient } from "pg";
 import { consultar } from "../database/connection";
 import { DadosLivro, Livro } from "../models/Livro";
 import { traduzirErroBanco } from "../utils/erros";
@@ -89,5 +90,25 @@ export class LivroRepository {
       [id],
     );
     return linha.existe;
+  }
+
+  async retirarExemplar(id: number, conexao: PoolClient): Promise<boolean> {
+    const linhas = await consultar<{ id: number }>(
+      `UPDATE livros
+       SET quantidade_disponivel = quantidade_disponivel - 1
+       WHERE id = $1 AND quantidade_disponivel > 0
+       RETURNING id`,
+      [id],
+      conexao,
+    );
+    return linhas.length > 0;
+  }
+
+  async devolverExemplar(id: number, conexao: PoolClient): Promise<void> {
+    await consultar(
+      "UPDATE livros SET quantidade_disponivel = quantidade_disponivel + 1 WHERE id = $1",
+      [id],
+      conexao,
+    );
   }
 }

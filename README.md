@@ -322,7 +322,7 @@ npx tsx src/testes/testeAutores.ts
 
 Fluxo usado: cada funcionalidade em uma branch criada a partir da `develop`, integrada com `git merge --no-ff`. Ao final, a `develop` foi integrada na `main`.
 
-Branches: `main`, `develop`, `feat/autores`, `feat/livros`, `feat/clientes`, `feat/emprestimos`, `feat/relatorios`, `feat/menu-principal` e `docs/readme`.
+Branches: `main`, `develop`, `feat/autores`, `feat/livros`, `feat/clientes`, `feat/emprestimos`, `feat/relatorios`, `feat/menu-principal`, `docs/readme` e `docs/kanban`.
 
 Os commits seguem o padrão [Conventional Commits](https://www.conventionalcommits.org/pt-br/) (`feat:`, `fix:`, `refactor:`, `test:`, `docs:`, `chore:`).
 
@@ -332,7 +332,7 @@ Os commits seguem o padrão [Conventional Commits](https://www.conventionalcommi
 
 ## Kanban
 
-Planejamento e acompanhamento das tarefas no Asana: [BookStore Manager CLI](https://app.asana.com/1/1217848314402019/project/1219088784899802/list)
+Planejamento e acompanhamento das tarefas no Asana: [BookStore Manager CLI](https://app.asana.com/1/1217848314402019/project/1219088784899802/list/1219089107624869)
 
 > O quadro do Asana exige login. Abaixo, o estado final do Kanban:
 
